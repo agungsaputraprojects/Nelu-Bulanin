@@ -1,0 +1,658 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
+    background: linear-gradient(135deg, #f8c8a6 0%, #e5a083 100%);
+    min-height: 100vh;
+    scroll-behavior: smooth;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+/* Parallax Background */
+.parallax-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #f8c8a6 0%, #e5a083 100%);
+    z-index: -1;
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+/* Cover Page Styles */
+.cover-page {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #f8c8a6 0%, #e5a083 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.cover-page::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>')
+        repeat;
+    animation: float 30s infinite linear;
+    z-index: 1;
+}
+
+.cover-content {
+    position: relative;
+    z-index: 2;
+}
+
+.sanskrit-image {
+    width: 152px;
+    height: auto;
+    opacity: 0;
+    animation: gentleFadeInUp 1.5s ease-out 0.5s forwards;
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.1));
+    will-change: transform, opacity;
+}
+
+.title {
+    font-family: "Ruthie", cursive;
+    font-size: 52px;
+    font-weight: 400;
+    color: #3e2502ff;
+    margin-bottom: 10px;
+    opacity: 0;
+    animation: gentleFadeInUp 1.5s ease-out 1s forwards;
+    will-change: transform, opacity;
+}
+
+.subtitle {
+    font-family: "Nanum Myeongjo", serif;
+    font-size: 20px;
+    color: #3e2502ff;
+    opacity: 0;
+    animation: gentleFadeInUp 1.5s ease-out 1.5s forwards;
+    will-change: transform, opacity;
+}
+
+.baby-photo {
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    margin: 12px 0;
+    opacity: 0;
+    animation: gentleZoomIn 1.5s ease-out 2s forwards;
+    object-fit: cover;
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    will-change: transform;
+}
+
+.baby-photo:hover {
+    transform: scale(1.03) rotate(0.5deg);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+.guest-info {
+    opacity: 0;
+    animation: gentleFadeInUp 1.5s ease-out 2.5s forwards;
+    will-change: transform, opacity;
+}
+
+.guest-label {
+    font-family: "Nanum Myeongjo", serif;
+    font-size: 16px;
+    color: #110000ff;
+    margin-bottom: 10px;
+}
+
+.guest-title {
+    font-family: "Nanum Myeongjo", serif;
+    font-size: 30px;
+    font-weight: 800;
+    color: #110000ff;
+    margin-bottom: 20px;
+}
+
+.invitation-text {
+    font-family: "Nanum Myeongjo", serif;
+    font-size: 16px;
+    color: #110000ff;
+    max-width: 400px;
+    line-height: 1.5;
+    margin: 0 auto 30px;
+}
+
+.open-btn {
+    font-family: "Nanum Myeongjo", serif;
+    background: linear-gradient(45deg, #8b4513, #d2691e);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-size: 1.1em;
+    font-weight: 400;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    opacity: 0;
+    animation: gentleFadeInUp 1.5s ease-out 3s forwards;
+    position: relative;
+    overflow: hidden;
+    will-change: transform;
+}
+
+.open-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.open-btn:active {
+    transform: translateY(0px);
+    transition: all 0.1s ease;
+}
+
+/* Main Content Styles */
+.main-content {
+    display: none;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f8c8a6 0%, #e5a083 100%);
+}
+
+.main-content.active {
+    display: block;
+    animation: smoothSlideUp 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.section {
+    padding: 40px 20px;
+    text-align: center;
+    position: relative;
+    opacity: 0;
+    animation: gentleFadeIn 1s ease-out forwards;
+}
+
+/* Header Section with Om */
+.header-section {
+    padding-top: 60px;
+}
+
+.ornament-container {
+    margin: 0 auto 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ornament-img {
+    width: 100px;
+    height: 100px;
+    filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.2));
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
+}
+
+.ornament-img:hover {
+    transform: rotate(5deg) scale(1.05);
+}
+
+.blessing-text {
+    font-family: "Nanum Myeongjo", serif;
+    font-size: 20px;
+    color: #8b4513;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Baby Sections */
+.baby-section {
+    padding: 30px 20px;
+}
+
+.baby-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    max-width: 600px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    flex-direction: row-reverse; /* Default: foto kanan, teks kiri */
+}
+
+.baby-content.reverse {
+    flex-direction: row; /* Reverse: foto kiri, teks kanan */
+}
+
+.baby-portrait {
+    width: 200px;
+    height: 250px;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    object-fit: cover;
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    will-change: transform;
+}
+
+.baby-portrait:hover {
+    transform: scale(1.03) translateY(-3px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+.baby-info {
+    text-align: right;
+    flex: 1;
+    min-width: 200px;
+}
+
+.baby-content.reverse .baby-info {
+    text-align: left;
+}
+
+.baby-name {
+    font-family: "Ruthie", cursive;
+    font-size: 44px;
+    color: #3e2502ff;
+    margin-bottom: 10px;
+    line-height: 1.2;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.baby-birth {
+    font-family: "Nanum Myeongjo", serif;
+    font-size: 20px;
+    color: #3e2502ff;
+    font-style: italic;
+}
+
+/* Divider */
+.divider-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.divider-img {
+    width: 750px;
+    height: auto;
+    opacity: 0.8;
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.1));
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
+}
+
+.divider-img:hover {
+    transform: scale(1.02);
+}
+
+.parent-title {
+    font-family: "Nanum Myeongjo", serif;
+    font-size: 32px;
+    font-weight: 400;
+    color: #3e2502ff;
+    margin-bottom: 20px;
+}
+
+.parent-names {
+    font-family: "Ruthie", cursive;
+    font-size: 52px;
+    color: #3e2502ff;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.dan {
+    font-size: 0.9em;
+    font-style: normal;
+    color: #3e2502ff;
+}
+
+/* Event Section */
+.event-section {
+    padding: 40px 20px 60px;
+}
+
+.section-title {
+    font-family: "Nanum Myeongjo", serif;
+    font-size: 32px;
+    color: #3e2502ff;
+    font-weight: 400;
+}
+
+.event-details {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 700px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    font-family: "Nanum Myeongjo", serif;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
+}
+
+.event-details:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.detail-item {
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(139, 69, 19, 0.2);
+}
+
+.detail-item:last-child {
+    border-bottom: none;
+}
+
+.detail-label {
+    font-weight: 400;
+    color: #3e2502ff;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.detail-value {
+    font-size: 20px;
+    color: #3e2502ff;
+    margin-top: 5px;
+    line-height: 1.5;
+}
+
+.detail-value.large {
+    font-size: 1.4em;
+    font-weight: 400;
+    text-align: center;
+}
+
+.detail-value.location {
+    text-align: center;
+    line-height: 1.6;
+}
+
+.map-btn {
+    background: linear-gradient(45deg, #8b4513, #d2691e);
+    color: white;
+    border: none;
+    padding: 15px 35px;
+    border-radius: 50px;
+    font-size: 1.1em;
+    font-weight: 500;
+    cursor: pointer;
+    margin: 30px 0 20px;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+    font-family: "Nanum Myeongjo", serif;
+    will-change: transform;
+}
+
+.map-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+}
+
+.map-btn:active {
+    transform: translateY(0px);
+    transition: all 0.1s ease;
+}
+
+/* Map Embed Styles */
+.map-embed {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    margin: 20px auto;
+    max-width: 700px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
+}
+
+.map-embed:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.map-embed iframe {
+    width: 100%;
+    min-height: 350px;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+/* Smooth Scroll Animation Classes */
+.scroll-fade {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform, opacity;
+}
+
+.scroll-fade.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Keyframe Animations */
+@keyframes float {
+    0% {
+        transform: translateX(-50px) translateY(-50px);
+    }
+    100% {
+        transform: translateX(50px) translateY(50px);
+    }
+}
+
+@keyframes gentleFadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes gentleZoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes smoothSlideUp {
+    from {
+        transform: translateY(50vh);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes gentleFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes float-up {
+    to {
+        transform: translateY(-110vh) rotate(180deg);
+        opacity: 0;
+    }
+}
+
+@keyframes smoothRipple {
+    to {
+        transform: scale(2.5);
+        opacity: 0;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .title {
+        font-size: 3em;
+    }
+
+    .sanskrit-image {
+        width: 100px;
+    }
+
+    .baby-photo {
+        width: 150px;
+        height: 200px;
+    }
+
+    .baby-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .baby-content.reverse {
+        flex-direction: column;
+    }
+
+    .baby-info {
+        text-align: center;
+    }
+
+    .baby-content.reverse .baby-info {
+        text-align: center; /* Mobile: semua teks center */
+    }
+
+    .baby-portrait {
+        width: 160px;
+        height: 200px;
+    }
+
+    .baby-name {
+        font-size: 2em;
+    }
+
+    .section-title {
+        font-size: 2em;
+    }
+
+    .event-details {
+        margin: 20px;
+        padding: 25px;
+    }
+
+    .ornament-img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .divider-img {
+        width: 200px;
+    }
+
+    .blessing-text {
+        font-size: 0.9em;
+        padding: 0 10px;
+    }
+
+    .map-embed {
+        margin: 15px;
+        padding: 15px;
+    }
+
+    .map-embed iframe {
+        min-height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 2.5em;
+    }
+
+    .sanskrit-image {
+        width: 80px;
+    }
+
+    .baby-photo {
+        width: 130px;
+        height: 170px;
+    }
+
+    .baby-portrait {
+        width: 140px;
+        height: 180px;
+    }
+
+    .baby-name {
+        font-size: 1.8em;
+    }
+
+    .section {
+        padding: 30px 15px;
+    }
+
+    .event-details {
+        margin: 15px;
+        padding: 20px;
+    }
+
+    .divider-img {
+        width: 180px;
+    }
+
+    .ornament-img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .blessing-text {
+        font-size: 0.85em;
+        line-height: 1.5;
+    }
+
+    .map-embed {
+        margin: 10px;
+        padding: 10px;
+    }
+
+    .map-embed iframe {
+        min-height: 200px;
+    }
+}

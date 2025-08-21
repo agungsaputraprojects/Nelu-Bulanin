@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Undangan - Upacara Nelu Bulanin</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;500;600;700&family=Ruthie&family=Nanum+Myeongjo:wght@400;700;800&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body>
+        <div class="parallax-bg"></div>
+
+        <!-- Cover Page -->
+        <div class="cover-page" id="coverPage">
+            <div class="cover-content">
+                <img
+                    src="assets/sanskrit.svg"
+                    alt="Sanskrit Text"
+                    class="sanskrit-image"
+                />
+                <h1 class="title">Undangan</h1>
+                <p class="subtitle">Upacara Nelu Bulanin</p>
+
+                <img
+                    src="assets/cover.png"
+                    alt="Baby Photo"
+                    class="baby-photo"
+                    id="babyPhoto"
+                />
+
+                <div class="guest-info">
+                    <p class="guest-label">Kepada Bapak/Ibu/Saudara/i</p>
+                    <h2 class="guest-title">Tamu Undangan</h2>
+                    <p class="invitation-text">
+                        Tanpa Mengurangi Rasa Hormat, Kami Mengundang Anda Untuk
+                        Hadir Di Acara Keluarga Kami.
+                    </p>
+                </div>
+
+                <button class="open-btn" onclick="openInvitation()">
+                    Buka Undangan
+                </button>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content" id="mainContent">
+            <!-- Om Ornament Header -->
+            <section class="section header-section">
+                <div class="ornament-container scroll-fade">
+                    <img
+                        src="assets/logo.png"
+                        alt="Om Ornament"
+                        class="ornament-img"
+                    />
+                </div>
+                <p class="blessing-text scroll-fade">
+                    Dengan memohon restu Ida Sang Hyang Widhi Wasa, kami
+                    bermaksud mengundang Bapak/Ibu/Saudara/i untuk hadir dalam
+                    Upacara Manusa Yadnya Nelu Bulanin
+                </p>
+            </section>
+
+            <!-- First Baby Section -->
+            <section class="section baby-section">
+                <div class="baby-content">
+                    <img
+                        src="assets/foto-prila.png"
+                        alt="Tanggasana Hapsala"
+                        class="baby-portrait scroll-fade"
+                    />
+                    <div class="baby-info">
+                        <h2 class="baby-name scroll-fade">
+                            Tanggasana Hapsala
+                        </h2>
+                        <p class="baby-birth scroll-fade">
+                            Lahir: 11 April 2025
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Second Baby Section -->
+            <section class="section baby-section">
+                <div class="baby-content reverse">
+                    <img
+                        src="assets/foto-vinikha.png"
+                        alt="Dermokha Mayakula"
+                        class="baby-portrait scroll-fade"
+                    />
+                    <div class="baby-info">
+                        <h2 class="baby-name scroll-fade">Dermokha Mayakula</h2>
+                        <p class="baby-birth scroll-fade">
+                            Lahir: 22 Juli 2003
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Divider -->
+            <div class="divider-container scroll-fade">
+                <img
+                    src="assets/divider.png"
+                    alt="Divider"
+                    class="divider-img"
+                />
+            </div>
+
+            <!-- Parents Info -->
+            <section class="section parents-section">
+                <div class="parent-info scroll-fade">
+                    <h3 class="parent-title">Putri dari</h3>
+                    <p class="parent-names">
+                        Juelok Doddy Pratama<br /><span class="dan">dan</span
+                        ><br />Purnama Dewi
+                    </p>
+                </div>
+            </section>
+
+            <!-- Divider -->
+            <div class="divider-container scroll-fade">
+                <img
+                    src="assets/divider.png"
+                    alt="Divider"
+                    class="divider-img"
+                />
+            </div>
+
+            <!-- Event Details -->
+            <section class="section event-section">
+                <h2 class="section-title scroll-fade">Waktu dan Tempat</h2>
+
+                <div class="event-details scroll-fade">
+                    <div class="detail-item">
+                        <div class="detail-value">4 September, 2025</div>
+                    </div>
+
+                    <div class="detail-item">
+                        <div class="detail-value">
+                            Resepsi mulai jam 2 siang
+                        </div>
+                    </div>
+
+                    <div class="detail-item">
+                        <div class="detail-label">Bertempat di</div>
+                        <div class="detail-value location">
+                            Banjar Dinas Megati Kelod, Desa Megati<br />
+                            Kecamatan Selemadeg Timur<br />
+                            Kabupaten Tabanan<br />
+                            Bali, Indonesia.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="map-embed scroll-fade">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3945.7284444165353!2d115.05505818255615!3d-8.496260285145088!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd22fd77746c471%3A0x8136fc5cd5d6d25b!2sKantor%20Perbekel%20Desa%20Megati!5e0!3m2!1sid!2sid!4v1693123456789!5m2!1sid!2sid"
+                        width="100%"
+                        height="300"
+                        style="
+                            border: 0;
+                            border-radius: 15px;
+                            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+                        "
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                    >
+                    </iframe>
+                </div>
+
+                <button class="map-btn scroll-fade" onclick="openGoogleMaps()">
+                    Lokasi Google Map
+                </button>
+            </section>
+        </div>
+
+        <script src="js/script.js"></script>
+    </body>
+</html>
