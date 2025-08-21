@@ -25,26 +25,19 @@ function openGoogleMaps() {
 // Smooth Scroll Animations
 function initSmoothScrollAnimations() {
     const observerOptions = {
-        threshold: 0.1,
-        rootMargin: "0px 0px -20px 0px",
+        threshold: 0.05,
+        rootMargin: "0px 0px 50px 0px",
     };
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
-                // Add staggered animation delay
+                // Kurangi delay untuk animasi yang lebih cepat
                 const index = Array.from(
                     document.querySelectorAll(".scroll-fade")
                 ).indexOf(entry.target);
-                entry.target.style.transitionDelay = `${index * 0.1}s`;
+                entry.target.style.transitionDelay = `${index * 0.05}s`;
                 entry.target.classList.add("visible");
-
-                // Add subtle effects based on element type
-                if (entry.target.classList.contains("baby-portrait")) {
-                    setTimeout(() => {
-                        entry.target.style.animation = "none";
-                    }, 1000);
-                }
             }
         });
     }, observerOptions);
